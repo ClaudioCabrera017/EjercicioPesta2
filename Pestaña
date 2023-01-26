@@ -1,0 +1,33 @@
+import React, {useState} from  'react';
+
+const Pestaña = ({pestaña, setpestaña}) => {
+
+ const activarIndice=(index)=>{
+    let pestTemp=[];
+    pestTemp =pestaña.map((item,i)=>{
+    if (i===index) {
+        item.estado=true;
+    } else{
+        item.estado= false;
+    }
+    return item;
+});
+//Setear la pestaña
+setpestaña(pestTemp);
+}
+    return (
+        <div>
+            {pestaña.map((item,index)=>{
+                return(
+                    <button  key={index} onClick={()=>activarIndice(index)}>
+                            {item.etiqueta}
+                    </button>
+                
+                )
+            })}
+
+
+        </div>
+    )
+}
+export default Pestaña;
