@@ -1,0 +1,14 @@
+import React from 'react'
+
+const Pestañacaja = ({ pestaña }) => {
+// find itera cada array y para entrar hay que poner un punto 
+	const pestActiva =pestaña.find(item =>item.estado===true);
+  console.log(pestActiva);
+	return (
+		<div>
+			{pestActiva.contenido}
+		</div>
+	)
+}
+
+export default Pestañacaja
