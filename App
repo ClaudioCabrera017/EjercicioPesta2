@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+import './App.css';
+import Pestañas from './Pestañas';
+import Pestañacaja from './Pestañacaja';
+
+function App() {
+  const [pestaña,setpestaña]=useState([
+    {
+    etiqueta: 'Tab1',
+    contenido: 'Contenido Tab 1',
+    estado: true
+    }, // Estado es para saber que pestaña esta activo
+    {
+      etiqueta: 'Tab2',
+      contenido: 'Contenido Tab 2',
+      estado: false
+    },
+    {
+        etiqueta: 'Tab1',
+        contenido: 'Contenido Tab 3',
+        estado: false
+    },
+  ])
+  console.log ( pestaña )
+
+  return (
+    <div className="App">
+      <Pestañas pestaña={pestaña} setpestaña={setpestaña}   />
+      <Pestañacaja   pestaña={pestaña}/>
+    </div>
+  );
+}
+
+export default App;
